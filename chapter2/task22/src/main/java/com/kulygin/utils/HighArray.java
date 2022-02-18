@@ -31,9 +31,11 @@ public class HighArray {
 
     public boolean delete(long value) {
         int j;
-        for (j = 0; j < nElems; j++)
-            if (value == array[j])
+        for (j = 0; j < nElems; j++) {
+            if (value == array[j]) {
                 break;
+            }
+        }
         if (j == nElems)
             return false;
         else {
