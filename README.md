@@ -3,7 +3,7 @@ Exercises from book "Data Structures And Algorithms In Java"(Second edition)
 
 Student: Viktor Kulygin
 
-|Chapter|Task|
-| -- | --- |
-|Introduction|
-|[ht01-spring-xml-configuration](https://github.com/astonone/2021-02-otus-spring-kulygin/tree/main/ht01-spring-xml-configuration)|navigate in Spring projects for further study;apply the IoC principle when writing classes and tests;create a Spring context;define Spring Beans in context;organize a proper DI.|
+| Chapter                                                                                                          | Task                                                                                                                                                                              |
+|------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2                                                                                                                |
+| [chapter02-task21](https://github.com/astonone/data_structures_and_algorithms_in_java/tree/main/chapter2/task21) | Add to the HighArray class from the highArray.java program (Listing 2.3) a getMax() method that returns the highest key value in the array or -1 if the array is empty. Add code to main() to test the new method. Assume that all keys are positive numbers. |
