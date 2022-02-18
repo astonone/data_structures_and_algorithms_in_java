@@ -2,7 +2,7 @@ package com.kulygin;
 
 import com.kulygin.utils.HighArray;
 
-public class Main {
+public class Main22 {
 
     public static void main(String[] args) {
         int maxSize = 100;
@@ -20,19 +20,16 @@ public class Main {
 
         arr.display();
 
-        System.out.println("Max value " + arr.getMax());
-
-        int searchKey = 35;
-        if (arr.find(searchKey))
-            System.out.println("Found " + searchKey);
-        else
-            System.out.println("Can't find " + searchKey);
+        System.out.println("Removed Max value " + arr.removeMax());
+        arr.display();
 
         arr.delete(0);
         arr.delete(55);
         arr.delete(99);
 
         arr.display();
-        System.out.println("Max value " + arr.getMax());
+
+        System.out.println("Removed Max value " + arr.removeMax());
+        arr.display();
     }
 }
