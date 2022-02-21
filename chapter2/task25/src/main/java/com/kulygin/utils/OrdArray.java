@@ -47,6 +47,11 @@ public class OrdArray {
         nElems++;
     }
 
+    /**
+     * A method of finding index first element of array which greater than search key using binary search.
+     *
+     * @param searchKey  key for which will be found index of first element greater than key
+     */
     private int findFirstGreaterThen(long searchKey) {
         int lowerBound = 0;
         int upperBound = nElems - 1;
