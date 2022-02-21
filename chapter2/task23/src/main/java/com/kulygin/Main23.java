@@ -25,6 +25,12 @@ public class Main23 {
         sortedArray.display();
     }
 
+    /**
+     * A method for sorting of array.
+     *
+     * @param arrayForSort     array which will be sorted
+     * @param maxArraySize     max size of array
+     */
     public static HighArray primitiveSort(HighArray arrayForSort, int maxArraySize) {
         HighArray sortedArray = new HighArray(maxArraySize);
 
