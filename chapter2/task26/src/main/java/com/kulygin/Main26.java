@@ -24,6 +24,7 @@ public class Main26 {
         arr.insert(66);
         arr.insert(66);
         arr.insert(33);
+        arr.insert(33);
 
         arr.display();
 

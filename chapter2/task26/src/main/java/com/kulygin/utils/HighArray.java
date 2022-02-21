@@ -69,6 +69,37 @@ public class HighArray {
     }
 
     public HighArray noDups() {
+        for (int j = 0; j < nElems; j++) {
+            while (j + 1 < nElems) {
+                if (!deleteFrom(array[j], j + 1)) {
+                    break;
+                }
+            }
+        }
         return this;
+    }
+
+    /**
+     * A method for deleting value from array starting from index.
+     *
+     * @param value value which will be deleted from array if value exists
+     * @param index start search index for value
+     */
+    private boolean deleteFrom(long value, int index) {
+        int j;
+        for (j = index; j < nElems; j++) {
+            if (value == array[j]) {
+                break;
+            }
+        }
+        if (j == nElems)
+            return false;
+        else {
+            for (int k = j; k < nElems; k++) {
+                array[k] = array[k + 1];
+            }
+            nElems--;
+            return true;
+        }
     }
 }
