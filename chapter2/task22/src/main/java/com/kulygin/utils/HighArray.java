@@ -1,5 +1,8 @@
 package com.kulygin.utils;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class HighArray {
 
     private long[] array;             // Link to the array
@@ -66,5 +69,20 @@ public class HighArray {
         }
         delete(max);
         return max;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        HighArray array1 = (HighArray) o;
+        return nElems == array1.nElems && Arrays.equals(array, array1.array);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(nElems);
+        result = 31 * result + Arrays.hashCode(array);
+        return result;
     }
 }

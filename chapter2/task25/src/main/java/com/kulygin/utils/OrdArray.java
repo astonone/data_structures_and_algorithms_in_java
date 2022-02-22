@@ -1,5 +1,8 @@
 package com.kulygin.utils;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class OrdArray {
 
     private long[] array;
@@ -50,7 +53,7 @@ public class OrdArray {
     /**
      * A method of finding index first element of array which greater than search key using binary search.
      *
-     * @param searchKey  key for which will be found index of first element greater than key
+     * @param searchKey key for which will be found index of first element greater than key
      */
     private int findFirstGreaterThen(long searchKey) {
         int lowerBound = 0;
@@ -96,9 +99,21 @@ public class OrdArray {
         long[] resultArray = new long[resultArrayMaxSize];
 
         if (this.size() == 0) {
-            return arrayForMerge;
+            for (int i = 0; i < arrayForMerge.size(); i++) {
+                resultArray[i] = arrayForMerge.get(i);
+            }
+            array = resultArray;
+            nElems = arrayForMerge.size();
+
+            return this;
         }
         if (arrayForMerge.size() == 0) {
+            for (int i = 0; i < this.size(); i++) {
+                resultArray[i] = this.get(i);
+            }
+
+            array = resultArray;
+
             return this;
         }
 
@@ -133,5 +148,20 @@ public class OrdArray {
         nElems = resultArrayIndex;
 
         return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrdArray ordArray = (OrdArray) o;
+        return nElems == ordArray.nElems && Arrays.equals(array, ordArray.array);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(nElems);
+        result = 31 * result + Arrays.hashCode(array);
+        return result;
     }
 }

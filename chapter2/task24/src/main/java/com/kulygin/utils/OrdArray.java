@@ -1,5 +1,8 @@
 package com.kulygin.utils;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class OrdArray {
 
     private long[] array;
@@ -46,7 +49,7 @@ public class OrdArray {
     /**
      * A method of finding index first element of array which greater than search key using binary search.
      *
-     * @param searchKey  key for which will be found index of first element greater than key
+     * @param searchKey key for which will be found index of first element greater than key
      */
     private int findFirstGreaterThen(long searchKey) {
         int lowerBound = 0;
@@ -86,5 +89,20 @@ public class OrdArray {
             System.out.print(array[j] + " ");
         }
         System.out.println("");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        OrdArray ordArray = (OrdArray) o;
+        return nElems == ordArray.nElems && Arrays.equals(array, ordArray.array);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(nElems);
+        result = 31 * result + Arrays.hashCode(array);
+        return result;
     }
 }
