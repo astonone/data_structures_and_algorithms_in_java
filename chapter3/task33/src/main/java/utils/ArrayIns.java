@@ -1,5 +1,8 @@
 package utils;
 
+import java.util.Arrays;
+import java.util.Objects;
+
 public class ArrayIns {
 
     private long[] a;
@@ -48,6 +51,48 @@ public class ArrayIns {
     }
 
     public void noDups() {
+        if (nElems < 2) {
+            return;
+        }
+        insertionSort();
+        int in, out;
+        long nextUniq = a[1], currentUniq = a[0];
+        long lastUniq = a[nElems - 1];
+        int currentUniqIndex = 1;
+        for (out = 1; out < nElems; out++) {
+            in = out;
 
+            if (currentUniq == lastUniq) {
+                a[out] = 0;
+                if (out == 1) {
+                    currentUniqIndex = 0;
+                }
+            } else {
+                while (a[in] == currentUniq || a[in] < nextUniq) {
+                    in++;
+                }
+                nextUniq = a[in];
+
+                a[out] = nextUniq;
+                currentUniq = nextUniq;
+                currentUniqIndex = out;
+            }
+        }
+        nElems = currentUniqIndex + 1;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof ArrayIns)) return false;
+        ArrayIns arrayIns = (ArrayIns) o;
+        return nElems == arrayIns.nElems && Arrays.equals(a, arrayIns.a);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(nElems);
+        result = 31 * result + Arrays.hashCode(a);
+        return result;
     }
 }
