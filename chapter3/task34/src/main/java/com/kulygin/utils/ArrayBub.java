@@ -25,28 +25,15 @@ public class ArrayBub {
     }
 
     public void bubbleSort() {
-        int outUp, outDown = nElems - 1;
-        int in;
-        boolean isDirectionChanged = false;
-
-        for (outUp = nElems - 1; outUp > 0; outUp--) {
-            if (!isDirectionChanged) {
-                for (in = (nElems - 1) - outDown; in < outDown; in++) {
-                    if (a[in] > a[in + 1]) {
-                        swap(in, in + 1);
-                    }
+        int out, in;
+        for (out = nElems - 1; out > 1; out--) {
+            for (in = 0; in < out; in++) {
+                if (a[in] > a[in + 1]) {
+                    swap(in, in + 1);
                 }
-                isDirectionChanged = true;
-                outDown--;
-            } else {
-                for (in = outDown; in > (nElems - 1) - outDown - 1; in--) {
-                    if (a[in] < a[in - 1]) {
-                        swap(in, in - 1);
-                    }
-                }
-                isDirectionChanged = false;
             }
         }
+
     }
 
     private void swap(int one, int two) {
