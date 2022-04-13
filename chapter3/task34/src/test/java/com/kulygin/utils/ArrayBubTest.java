@@ -36,7 +36,7 @@ class ArrayBubTest {
         expectedArray.insert(88);
         expectedArray.insert(99);
 
-        initialArray.bubbleSort();
+        initialArray.oddEvenSort();
 
         assertThat(initialArray).isEqualTo(expectedArray);
     }
@@ -78,7 +78,7 @@ class ArrayBubTest {
         expectedArray.insert(120);
         expectedArray.insert(130);
 
-        initialArray.bubbleSort();
+        initialArray.oddEvenSort();
 
         assertThat(initialArray).isEqualTo(expectedArray);
     }
@@ -99,7 +99,7 @@ class ArrayBubTest {
         expectedArray.insert(77);
         expectedArray.insert(99);
 
-        initialArray.bubbleSort();
+        initialArray.oddEvenSort();
 
         assertThat(initialArray).isEqualTo(expectedArray);
     }
@@ -122,7 +122,7 @@ class ArrayBubTest {
         expectedArray.insert(99);
         expectedArray.insert(110);
 
-        initialArray.bubbleSort();
+        initialArray.oddEvenSort();
 
         assertThat(initialArray).isEqualTo(expectedArray);
     }

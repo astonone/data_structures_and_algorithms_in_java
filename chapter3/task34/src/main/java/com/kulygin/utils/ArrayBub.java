@@ -24,16 +24,26 @@ public class ArrayBub {
         System.out.println("");
     }
 
-    public void bubbleSort() {
-        int out, in;
-        for (out = nElems - 1; out > 1; out--) {
-            for (in = 0; in < out; in++) {
-                if (a[in] > a[in + 1]) {
-                    swap(in, in + 1);
+    public void oddEvenSort() {
+        boolean isSwap = true;
+
+        while (isSwap) {
+            isSwap = false;
+
+            for (int i = 0; i < nElems - 1; i+=2) {
+                if (a[i] > a[i + 1]) {
+                    swap(i, i + 1);
+                    isSwap = true;
+                }
+            }
+
+            for (int i = 1; i < nElems - 1; i+=2) {
+                if (a[i] > a[i + 1]) {
+                    swap(i, i + 1);
+                    isSwap = true;
                 }
             }
         }
-
     }
 
     private void swap(int one, int two) {

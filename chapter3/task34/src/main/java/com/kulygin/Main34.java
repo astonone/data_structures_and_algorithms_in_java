@@ -20,7 +20,7 @@ public class Main34 {
         arr.insert(33);
 
         arr.display();
-        arr.bubbleSort();
+        arr.oddEvenSort();
         arr.display();
     }
 }
