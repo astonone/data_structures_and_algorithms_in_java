@@ -1,10 +1,13 @@
-import utils.ArrayIns;
+package com.kulygin;
 
-public class Main32 {
+import com.kulygin.utils.ArrayBub;
+
+public class Main34 {
     public static void main(String[] args) {
         int maxSize = 100;
-        ArrayIns arr;
-        arr = new ArrayIns(maxSize);
+        ArrayBub arr;
+        arr = new ArrayBub(maxSize);
+
         arr.insert(77);
         arr.insert(99);
         arr.insert(44);
@@ -15,8 +18,9 @@ public class Main32 {
         arr.insert(00);
         arr.insert(66);
         arr.insert(33);
+
         arr.display();
-        arr.insertionSort();
+        arr.bubbleSort();
         arr.display();
     }
 }
