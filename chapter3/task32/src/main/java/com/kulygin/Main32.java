@@ -1,4 +1,4 @@
-package com.kulygin.utils;
+package com.kulygin;
 
 import com.kulygin.utils.ArrayIns;
 
