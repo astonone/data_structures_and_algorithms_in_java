@@ -25,17 +25,25 @@ public class ArrayIns {
         System.out.println("");
     }
 
-    public void insertionSort() {
+    public String insertionSort() {
         int in, out;
+        int copyAmount = 0, compareAmount = 0;
         for (out = 1; out < nElems; out++) {
             long temp = a[out];
+            copyAmount++;
             in = out;
+            copyAmount++;
             while (in > 0 && a[in - 1] >= temp) {
                 a[in] = a[in - 1];
                 --in;
+                copyAmount++;
+                compareAmount++;
             }
+            compareAmount++;
             a[in] = temp;
+            copyAmount++;
         }
+        return "Copy amount: " + copyAmount + ", Compare amount: " + compareAmount;
     }
 
     public long median() {
