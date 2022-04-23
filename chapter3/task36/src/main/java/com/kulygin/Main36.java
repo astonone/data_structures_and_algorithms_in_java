@@ -19,7 +19,7 @@ public class Main36 {
         arr.insert(2);
 
         arr.display();
-        arr.insertionSort();
+        arr.insertionSortWithNoDups();
         arr.display();
     }
 }

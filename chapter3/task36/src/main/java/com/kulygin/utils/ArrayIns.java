@@ -38,6 +38,43 @@ public class ArrayIns {
         }
     }
 
+    public void insertionSortWithNoDups() {
+        if (nElems == 1) {
+            return;
+        }
+        int currentDup = 0;
+
+        int in, out;
+        for (out = 1; out < nElems; out++) {
+            long temp = a[out];
+            in = out;
+            while (in > 0 && a[in - 1] >= temp) {
+                if (a[in - 1] == temp && a[in - 1] != -1) {
+                    temp = -1;
+                    currentDup++;
+                }
+                a[in] = a[in - 1];
+                --in;
+            }
+
+            a[in] = temp;
+        }
+
+        int currentPos = 0;
+        for (int i = currentDup; i < nElems; i++) {
+            swap(currentPos, i);
+            a[i] = 0;
+            currentPos++;
+        }
+        nElems -= currentDup;
+    }
+
+    private void swap(int one, int two) {
+        long temp = a[one];
+        a[one] = a[two];
+        a[two] = temp;
+    }
+
     public long median() {
         insertionSort();
 
