@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.kulygin</groupId>
-        <artifactId>data_structures_and_algorithms_in_java</artifactId>
+        <artifactId>chapter5</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>chapter5</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>task52</module>
-        <module>task53</module>
-        <module>task54</module>
-        <module>task55</module>
-    </modules>
+    <artifactId>task55</artifactId>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
