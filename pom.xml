@@ -20,7 +20,7 @@
         <module>chapter3</module>
         <module>chapter4</module>
         <module>chapter5</module>
-        <module>chapter5/task51</module>
+        <module>chapter6</module>
     </modules>
 
     <dependencyManagement>
