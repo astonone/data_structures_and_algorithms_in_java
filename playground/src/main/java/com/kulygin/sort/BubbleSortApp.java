@@ -23,6 +23,8 @@ public class BubbleSortApp {
 class ArrayBub {
     private long[] a;
     private int nElems;
+    private int comparisons;
+    private int copies;
 
     public ArrayBub(int max) {
         a = new long[max];
@@ -38,19 +40,25 @@ class ArrayBub {
         for (int j = 0; j < nElems; j++)
             System.out.print(a[j] + " ");
         System.out.println("");
+        System.out.println("Comparisons: " + comparisons + ", copies: " + copies);
     }
 
     public void bubbleSort() {
+        comparisons = 0;
+        copies = 0;
         int out, in;
         for (out = nElems - 1; out > 1; out--)
             for (in = 0; in < out; in++)
-                if (a[in] > a[in + 1])
+                if (a[in] > a[in + 1]) {
+                    comparisons++;
                     swap(in, in + 1);
+                }
     }
 
     private void swap(int one, int two) {
         long temp = a[one];
         a[one] = a[two];
         a[two] = temp;
+        copies += 3;
     }
 }
