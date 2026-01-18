@@ -2,20 +2,17 @@ package com.kulygin.sort;
 
 public class SelectionSortApp {
     public static void main(String[] args) {
-        int maxSize = 100;
+        int maxSize = 10;
         ArraySel arr = new ArraySel(maxSize);
-        arr.insert(77);
-        arr.insert(99);
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
-        arr.insert(88);
-        arr.insert(11);
-        arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
+        for (int j = 0; j < maxSize; j++) {
+            long n = (int) (java.lang.Math.random() * 99);
+            arr.insert(n);
+        }
         arr.display();
+        long startTime = System.currentTimeMillis();
         arr.selectionSort();
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time taken: " + (endTime - startTime) + "ms");
         arr.display();
     }
 }
@@ -23,6 +20,8 @@ public class SelectionSortApp {
 class ArraySel {
     private long[] a;
     private int nElems;
+    private long comparisons;
+    private long copies;
 
     public ArraySel(int max) {
         a = new long[max];
@@ -38,15 +37,21 @@ class ArraySel {
         for (int j = 0; j < nElems; j++)
             System.out.print(a[j] + " ");
         System.out.println("");
+        System.out.println("Comparisons: " + comparisons + ", copies: " + copies);
     }
 
     public void selectionSort() {
+        comparisons = 0;
+        copies = 0;
         int out, in, min;
         for (out = 0; out < nElems - 1; out++) {
             min = out;
-            for (in = out + 1; in < nElems; in++)
-                if (a[in] < a[min])
+            for (in = out + 1; in < nElems; in++) {
+                comparisons++;
+                if (a[in] < a[min]) {
                     min = in;
+                }
+            }
             swap(out, min);
         }
     }
@@ -55,5 +60,6 @@ class ArraySel {
         long temp = a[one];
         a[one] = a[two];
         a[two] = temp;
+        copies += 3;
     }
 }

@@ -9,7 +9,10 @@ public class Main72 {
             arr.insert(n);
         }
         arr.display();
+        long startTime = System.currentTimeMillis();
         arr.quickSort();
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time taken: " + (endTime - startTime) + "ms");
         arr.display();
         arr.printStatistics();
     }

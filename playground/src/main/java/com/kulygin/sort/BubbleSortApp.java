@@ -2,20 +2,17 @@ package com.kulygin.sort;
 
 public class BubbleSortApp {
     public static void main(String[] args) {
-        int maxSize = 100;
+        int maxSize = 10;
         ArrayBub arr = new ArrayBub(maxSize);
-        arr.insert(77);
-        arr.insert(99);
-        arr.insert(44);
-        arr.insert(55);
-        arr.insert(22);
-        arr.insert(88);
-        arr.insert(11);
-        arr.insert(00);
-        arr.insert(66);
-        arr.insert(33);
+        for (int j = 0; j < maxSize; j++) {
+            long n = (int) (java.lang.Math.random() * 99);
+            arr.insert(n);
+        }
         arr.display();
+        long startTime = System.currentTimeMillis();
         arr.bubbleSort();
+        long endTime = System.currentTimeMillis();
+        System.out.println("Time taken: " + (endTime - startTime) + "ms");
         arr.display();
     }
 }
@@ -23,8 +20,8 @@ public class BubbleSortApp {
 class ArrayBub {
     private long[] a;
     private int nElems;
-    private int comparisons;
-    private int copies;
+    private long comparisons;
+    private long copies;
 
     public ArrayBub(int max) {
         a = new long[max];
@@ -47,12 +44,14 @@ class ArrayBub {
         comparisons = 0;
         copies = 0;
         int out, in;
-        for (out = nElems - 1; out > 1; out--)
-            for (in = 0; in < out; in++)
+        for (out = nElems - 1; out > 1; out--) {
+            for (in = 0; in < out; in++) {
+                comparisons++;
                 if (a[in] > a[in + 1]) {
-                    comparisons++;
                     swap(in, in + 1);
                 }
+            }
+        }
     }
 
     private void swap(int one, int two) {
